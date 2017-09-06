@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+#^syntax detection
+site "http://community.opscode.com/api/v1"
+
+cookbook 'apt'
+cookbook 'build-essential'
+cookbook 'system', '= 0.11.2'
+cookbook 'php'
+cookbook 'git'
+cookbook 'nodejs'
+cookbook 'mariadb'
+cookbook 'apache2'
+cookbook 'yarn', '~> 0.3.0'

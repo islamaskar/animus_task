@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+export DEBIAN_FRONTEND=noninteractive
+
+#Install Symfony
+symfony(){
+  curl -LsS https://symfony.com/installer -o /usr/bin/symfony
+  chmod a+x /usr/bin/symfony
+}
+if ! [ -f /usr/bin/symfony ]
+then
+  symfony
+fi
+
+# Install composer as a dependancy manager
+composer(){
+    curl -Ss https://getcomposer.org/installer | php
+    mv composer.phar /usr/bin/composer
+}
+
+if ! [ -f /usr/bin/composer ]
+then
+  composer
+fi
+
+#cd animus && exec composer update
