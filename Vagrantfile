@@ -20,8 +20,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #vb.gui = true
   end
 
-  # Forward the Rails server default port to the host
+  # Forward the Symfony server default port to the host
   config.vm.network :forwarded_port, guest: 8000, host: 8000
+  # Forward the ReactJS App default port to the host
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
   # Mount the source code directory
   config.vm.synced_folder '.', '/home/ubuntu/animus', nfs: true
   config.vm.network "private_network", ip: "192.168.33.10"
@@ -44,6 +46,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         "packages" => {
           "install" => ["curl","libapache2-mod-php", "php-mcrypt", "php7.0-mysql", "php7.0-curl"]
         }
+      },
+      "mariadb" => {
+        "server_root_password": "animus"
+      },
+      "nodejs": {
+        "npm_packages": [
+          {
+            "name": "create-react-app"
+          }
+        ]
       }
     }
     #chef.log_level = :debug
