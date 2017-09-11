@@ -218,4 +218,3 @@ class Apartment
         return $this->email;
     }
 }
-
