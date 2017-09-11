@@ -63,6 +63,21 @@ class Apartment
      */
     private $email;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     */
+     private $image;
+
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="token", type="string", length=32, nullable=true)
+      */
+
+    private $token;
+
 
     /**
      * Get id
@@ -216,5 +231,53 @@ class Apartment
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Apartment
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set token
+     *
+     * @param string $token
+     *
+     * @return Apartment
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    /**
+     * Get token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
     }
 }
