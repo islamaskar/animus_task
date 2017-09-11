@@ -1,7 +1,0 @@
-{
-    "require": {
-        "friendsofsymfony/rest-bundle": "^2.2",
-        "jms/serializer-bundle": "^2.1",
-        "nelmio/cors-bundle": "^1.5"
-    }
-}
