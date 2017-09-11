@@ -39,3 +39,15 @@ monolog:
 
 #swiftmailer:
 #    delivery_addresses: ['me@example.com']
+#
+bazinga_faker:
+    orm: doctrine
+    entities:
+        AppBundle\Entity\Apartment:
+            number: 10
+            custom_formatters:
+                street:   { method: address }
+                postCode: { method: postcode }
+                town: { method: city }
+                country: { method: country }
+                email: { method: safeEmail }
